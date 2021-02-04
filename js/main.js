@@ -3,8 +3,8 @@ document.querySelector('button').addEventListener('click',getDrink);
 
 function getDrink(){
    const inputVal = document.querySelector('input').value;
-
-   const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+inputVal
+   const properSpaces = inputVal.replace(/ +/g, " ");
+   const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+properSpaces;
 
    fetch(url)
    .then(res => res.json())
